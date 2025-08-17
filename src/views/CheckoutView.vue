@@ -263,7 +263,7 @@ const loadCustomers = async () => {
     const local = await localForage.getItem("customers")
     if (Array.isArray(local) && local.length) customers.value = local
     if (auth.isOnline && auth.token) {
-      const { data } = await axios.get(`${API_BASE_URL}/customers`, {
+      const { data } = await axios.get(`/customers`, {
         headers: { Authorization: `Bearer ${auth.token}` }
       })
       if (Array.isArray(data)) {
@@ -282,7 +282,7 @@ const loadPromotions = async () => {
     const local = await localForage.getItem("promotions")
     if (Array.isArray(local)) promotions.value = local
     if (auth.isOnline && auth.token) {
-      const { data } = await axios.get(`${API_BASE_URL}/promotions`, {
+      const { data } = await axios.get(`/promotions`, {
         headers: { Authorization: `Bearer ${auth.token}` }
       })
       if (Array.isArray(data)) {
@@ -524,7 +524,7 @@ const queueOffline = async (sale) => {
 const doSave = async () => {
   const payload = buildPayload()
   if (auth.isOnline) {
-    await axios.post(`${API_BASE_URL}/sales`, payload, {
+    await axios.post(`/sales`, payload, {
       headers: { Authorization: `Bearer ${auth.token}` }
     })
     showToast("ok", "Sale saved successfully.")

@@ -248,7 +248,7 @@ const loadCustomers = async () => {
   error.value = ''
   try {
     if (auth.isOnline && auth.token) {
-      const { data } = await axios.get(`${API_BASE_URL}/customers`, {
+      const { data } = await axios.get(`/customers`, {
         headers: { Authorization: `Bearer ${auth.token}` }
       })
       const arr = Array.isArray(data) ? data : (Array.isArray(data?.data) ? data.data : [])
