@@ -20,7 +20,7 @@ export function useAuth() {
     loading.value = true
     error.value = null
     try {
-      const { data } = await axios.post('/api/login', credentials)
+      const { data } = await axios.post('/login', credentials)
  
        // Save tokens and user data (do not let sync errors mark login as failed)
        try {
