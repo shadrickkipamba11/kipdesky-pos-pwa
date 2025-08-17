@@ -4,6 +4,8 @@ import axios from 'axios'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
+
 export function useAuth() {
   const router = useRouter()
   const authStore = useAuthStore()
@@ -18,7 +20,7 @@ export function useAuth() {
     loading.value = true
     error.value = null
     try {
-      const { data } = await axios.post('/api/login', credentials)
+      const response = await axios.post(`${API_BASE_URL}/login`, credentials)
       await authStore.setAuth(data, { remember })
       router.push('/pos')
       return true
