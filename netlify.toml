@@ -4,6 +4,8 @@
 
 # Vue Router SPA fallback
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/api/*"
+  to = "https://app.kipdesky.com/api/:splat"
   status = 200
+  force = true
+
