@@ -22,7 +22,7 @@ export const flushPendingSales = async () => {
 
   for (const sale of list) {
     try {
-      await axios.post(`${API_BASE_URL}/sales`, sale, { headers })
+      await axios.post(`/sales`, sale, { headers })
       // success: drop it
     } catch (e) {
       // keep it for next round
@@ -60,11 +60,11 @@ export const syncAllData = async () => {
     if (!authStore.token) return false
 
     const [products, customers, promotions, sales, store] = await Promise.all([
-      axios.get(`${API_BASE_URL}/products`),
-      axios.get(`${API_BASE_URL}/customers`),
-      axios.get(`${API_BASE_URL}/promotions`),
-      axios.get(`${API_BASE_URL}/fetchsales`),
-      axios.get(`${API_BASE_URL}/stores`)
+      axios.get(`/products`),
+      axios.get(`/customers`),
+      axios.get(`/promotions`),
+      axios.get(`/fetchsales`),
+      axios.get(`/stores`)
     ])
 
     await Promise.all([

@@ -96,7 +96,7 @@ export const useAuthStore = defineStore('auth', () => {
       // try a silent validate if online; if it fails, try refresh
       if (isOnline.value) {
         try {
-          const { data } = await axios.get(`${API}/validate-token`)
+          const { data } = await axios.get(`/validate-token`)
           if (data?.user) {
             user.value = data.user
             store.value = data.user.store || saved.store || null
