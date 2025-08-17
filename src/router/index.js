@@ -44,7 +44,7 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   const { useAuthStore } = await import('@/stores/auth')
   const authStore = useAuthStore()
-  authStore.init()
+  await authStore.init()
 
   const isPWAInstalled = window.matchMedia('(display-mode: standalone)').matches
   if (to.meta.requiresPWA && !isPWAInstalled) next('/install')

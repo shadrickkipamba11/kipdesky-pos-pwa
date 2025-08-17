@@ -88,7 +88,7 @@ const credentials = reactive({ email: '', password: '' })
 const rememberMe = ref(false)
 
 const handleSubmit = () => {
-  login(credentials)
+  login(credentials, { remember: rememberMe.value })
 }
 </script>
 

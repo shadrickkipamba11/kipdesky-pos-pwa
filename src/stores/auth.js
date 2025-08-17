@@ -80,8 +80,12 @@ export const useAuthStore = defineStore('auth', () => {
     }, remember)
 
     // first sync
-    await syncAllData()
-    startPeriodicSync()
+    try {
+       await syncAllData()
+     } catch (e) {
+       console.warn('[auth] initial offline sync failed (continuing):', e)
+     }
+     startPeriodicSync()
   }
 
   const init = async () => {
