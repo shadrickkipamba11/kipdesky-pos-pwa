@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="login-card">
       <div class="logo-container">
-        <img src="/src/assets/Logo.png" alt="Kipdesky POS Logo" class="logo" />
+        <img src="/logo.png" alt="Kipdesky POS Logo" class="logo" />
       </div>
 
       <h1 class="login-title">Welcome Back</h1>

@@ -4,7 +4,7 @@
 
     <div class="card">
       <div class="brand">
-        <img src="@/assets/logo.png" alt="Kipdesky POS" class="logo" />
+        <img src="/logo.png" alt="Kipdesky POS" class="logo">
         <h1 class="title">Kipdesky POS</h1>
         <p class="subtitle">Fast. Reliable. Offline-ready.</p>
       </div>
@@ -58,8 +58,7 @@
           <h3><i class="fas fa-mobile-screen"></i> iOS (Safari)</h3>
           <ol class="ios-steps">
             <li>
-              Tap the <strong>Share</strong> button
-              <img src="@/assets/share-icon.png" class="share-icon" alt="" />
+              Tap the <strong>Share</strong> button <span class="icon">🔗</span>
             </li>
             <li>Select <strong>Add to Home Screen</strong></li>
             <li>Return here and tap <strong>Open Application</strong></li>
