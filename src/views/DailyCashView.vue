@@ -213,7 +213,7 @@ const loadSales = async () => {
     if (outletId) params.set('outlet_id', outletId)
 
     if (auth.isOnline && auth.token) {
-      const { data } = await axios.get(`${API_BASE_URL}/fetchsales?${params.toString()}`, {
+      const { data } = await axios.get(`/fetchsales?${params.toString()}`, {
         headers: { Authorization: `Bearer ${auth.token}` }
       })
       const arr = Array.isArray(data) ? data : (Array.isArray(data?.data) ? data.data : [])
